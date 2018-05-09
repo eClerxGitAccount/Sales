@@ -13,4 +13,9 @@ datagroup: lookermodel_rs_default_datagroup {
 
 persist_with: lookermodel_rs_default_datagroup
 
-explore: dashboard_input_ssis {}
+explore: dashboard_input_ssis {
+  join:product_id  {
+    sql_on: ${dashboard_input_ssis.ss_sku_code} = ${product_id.product_name} ;;
+    relationship: many_to_one
+  }
+}

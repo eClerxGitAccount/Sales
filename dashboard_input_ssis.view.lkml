@@ -248,4 +248,11 @@ view: dashboard_input_ssis {
     type: count
     drill_fields: [series_name, db_name, seller_name]
   }
+
+  measure: total_lp_lc{
+    type: sum
+    sql: ${lp_lc} ;;
+    value_format: "0.000,,\" M\""
+    drill_fields: [series_name, db_name, seller_name, total_lp_lc]
+  }
 }
